@@ -43,7 +43,7 @@ either by opening a new command-line window and navigating to the folder,
 or from the windows explorer.
 
 <details>
-<summary>How do I do that?</summary>
+<summary><i>How do I do that?</i></summary>
 
 To open a directory in a commandline window:
 
@@ -71,19 +71,19 @@ If this step completes without errors, the following new files should have been
 created in the `src` folder:
 
 <details>
-<summary>`lua53.dll`</summary>
+<summary><code>lua53.dll</code></summary>
 This is really the main "Lua" library, which contains all that's needed for
 another program to run Lua code.
 </details>
 
 <details>
-<summary>`lua.exe`</summary>
+<summary><code>lua.exe</code></summary>
 This program uses the `lua53.dll` to load and run Lua code.
 It is usually the main way for users to run Lua scripts.
 </details>
 
 <details>
-<summary>`luac.exe`</summary>
+<summary><code>luac.exe</code></summary>
 This program compiles Lua source code to Lua byte code.
 This is different from compiling, for example, a C program to machine code,
 in that you still need the Lua interpreter to run the program,
