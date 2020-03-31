@@ -9,6 +9,8 @@ Compiling from Source using MinGW
 
 ### Install MinGW
 
+**The latest version of MinGW needs to be installed on the system**
+
 MinGW is a project that brings many of the developer tools from linux to
 windows, including tools like `make` and `gcc`.
 
@@ -26,6 +28,8 @@ and `mingw-developer-toolkit`.
 <!-- TODO: confirm whether the dev toolkit this is actually necessary) -->
 
 ### Download the Lua sources
+
+**The source code of Lua needs to be downloaded from lua.org**
 
 Next, download the source files from [lua.org](http://lua.org/download.html).
 Once you have downloaded the source code, packaged as a `.tar.gz` file,
@@ -55,6 +59,8 @@ To open a directory in a commandline window:
 </details>
 
 ### Build Lua
+
+**`mingw32-make` needs to be called in the project directory**
 
 Make sure you're in the right directory by typing `dir` and looking for the
 `src` and `doc` folders, as well as the `Makefile` and `README` files.
@@ -93,7 +99,59 @@ format that the Lua VM can directly interpret.
 
 ### Installing
 
-TODO: What's a reasonable place to install the Lua files?
+**the make task "install" needs to be called**
+
+To install Lua on your system,
+after running `make` to compile the files,
+run `mingw32-make install INSTALL_TOP='C:\Lua'`.
+
+By replacing "C:\Lua" with any other directory,
+you can change where the files will be installed to,
+for example, you can install Lua to `'C:\Program Files\Lua'`.
+
+### Adding Lua to the PATH variable
+
+**The `bin` subdirectory needs to be added to the PATH environment variable**
+
+If you want to call Lua on the command line without having to type the full
+path, you will have to add its `bin` directory to your PATH variable.
+
+To do this open the start menu by pressing the windows key and type "environment
+variables".
+To add the path for all users,
+choose the option to modify system environment variables.
+If you want this just for yourself,
+choose the option to modify environment variables for your account.
+
+In the list, find and double-click the variable called `PATH`.
+
+In windows 10, you should get a simple UI with a table layout.
+Click new and type (or copy) the path to your Lua installation directory,
+followed by `\bin`. For example, this could be `C:\Lua\bin`.
+
+When using windows 7, the UI looks a mit different,
+and you will only get a big text-box.
+Scroll to the beginning of the text box
+(you can just hold the left arrow for this)
+and type in the path to the `bin` directory as described above.
+Then add a `;` at the end to separate it from the next path.
+
+Installing Luarocks as a standalone executable
+----------------------------------------
+
+The easiest way to install luarocks on Windows is to get the standalone
+executables. These are just two `.exe` files that contain everything you need to
+run luarocks.
+
+- Open `https://luarocks.org` in your browser
+- Click "install" on the navigation bar at the top
+- Choose one of the two "all-in-one executable" options
+- Click the link and download the file
+- Unzip the two executables into a directory of your choosing
+
+The two executables can be saved in any directory you want,
+but it would make sense to place them either in Luas `bin` directory
+or give them their own subdirectory in `C:\Program Files`
 
 Installing Luarocks from Source
 ----------------------------------------
@@ -102,7 +160,14 @@ If you're installing Lua, chances are, you will want to install additional
 functionality from the internet. Currently, the main way of distributing Lua
 modules easily is using Luarocks.
 
-TODO: Write this
+- Open github.com/luarocks/luarocks
+- Click the *clone or download* button
+- Click Download ZIP and download the file
+- Unpack the ZIP file wherever you like
+- Within the folder you just unpacked, open a new commandline
+- Run the command `install.bat /LUA C:\Lua`
+
+Where `C:\Lua` should be replaced with Luas install directory.
 
 Installing LuaSocket and LuaSec via Luarocks
 ----------------------------------------
