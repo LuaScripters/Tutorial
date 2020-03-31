@@ -69,9 +69,10 @@ Temporarily add MinGWs bin folder to your path variable,
 if you haven't already configured this for your user account:
 
 In the commandline window, type `set PATH=C:\MinGW\bin:%PATH%`
-assuming you installed MinGW under `C:\MinGW` (see installation step)
+assuming you installed MinGW under `C:\MinGW` (see installation step).
+Otherwise, replace `C:\MinGW` your chosen MinGW installation directory.
 
-Now you should be able to compile Lua by typing `mingw32-make mingw`
+Now you should be able to compile Lua by typing `mingw32-make mingw`.
 
 If this step completes without errors, the following new files should have been
 created in the `src` folder:
@@ -84,7 +85,7 @@ another program to run Lua code.
 
 <details>
 <summary><code>lua.exe</code></summary>
-This program uses the `lua53.dll` to load and run Lua code.
+This program uses the <code>lua53.dll</code> to load and run Lua code.
 It is usually the main way for users to run Lua scripts.
 </details>
 
@@ -139,6 +140,10 @@ Then add a `;` at the end to separate it from the next path.
 Installing Luarocks as a standalone executable
 ----------------------------------------
 
+If you're installing Lua, chances are, you will want to install additional
+functionality from the internet. Currently, the main way of distributing Lua
+modules easily is using Luarocks.
+
 The easiest way to install luarocks on Windows is to get the standalone
 executables. These are just two `.exe` files that contain everything you need to
 run luarocks.
@@ -156,9 +161,9 @@ or give them their own subdirectory in `C:\Program Files`
 Installing Luarocks from Source
 ----------------------------------------
 
-If you're installing Lua, chances are, you will want to install additional
-functionality from the internet. Currently, the main way of distributing Lua
-modules easily is using Luarocks.
+For a variety of reasons,
+you may want to compile LuaRocks from source.
+To do this, follow the following steps:
 
 - Open github.com/luarocks/luarocks
 - Click the *clone or download* button
